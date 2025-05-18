@@ -3,40 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo List</title>
-    <link rel="stylesheet" href="./styles.css">
+    <title>Ayr Tip Calculator</title>
+    <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <div class="container">
-        <div class="todo-app">
-            <h1>To-Do App</h1>
-            <div class="stat-container">
-                <div id="details">
-                    <h3>Keep It Up!</h3>
-                    <div class="progressbar">
-                        <div id="progress"></div>
-                    </div>
-                </div>
-                <div class="stats-number"><p id="numbers"></p></div>
-            </div>
-            <form class="input-area">
-                <input type="text" id="task-input" placeholder="Add a new task...">
-                <button type="submit" id="add-task-btn"><i class="fa-solid fa-plus"></i></button>
-            </form>
-            <div class="todos-container">
-                <ul id="task-list">
-                </ul>
-                <img class="empty-image" src="./pictures/rain.gif" alt="empty">
-            </div>
-        </div>
-    </div>
+   <div id="container">
+   <div id="calculator">
+      <input id="display" readonly type="text" disabled>
+      <div id="keys">
+          <button onclick="appendToDisplay('1')" class="numberButton">1</button>
+          <button onclick="appendToDisplay('2')" class="numberButton">2</button>
+          <button onclick="appendToDisplay('3')" class="numberButton">3</button>
+          <button onclick="appendToDisplay('4')" class="numberButton">4</button>
+          <button onclick="appendToDisplay('5')" class="numberButton">5</button>
+          <button onclick="appendToDisplay('6')" class="numberButton">6</button>
+          <button onclick="appendToDisplay('7')" class="numberButton">7</button>
+          <button onclick="appendToDisplay('8')" class="numberButton">8</button>
+          <button onclick="appendToDisplay('9')" class="numberButton">9</button>
+          <button onclick="appendToDisplay('0')" class="numberButton">0</button>
+          <button onclick="appendToDisplay('.')" class="numberButton">.</button>
+          <button onclick="collectTips()" class="collect-btn">Collect Tips</button>
+          <button onclick="clearDisplay()" class="operator-btn">C</button>
+          <button onclick="backspace()" class="delete-btn">Delete</button>
+          <div>
+            <p id="backOfHouse">BoH?</p>
+          <form>
+            <input type="radio" id="yes" value="Yes" name="yes">
+            <label for="yes">Yes</label>
+            <br>
+            <input type="radio" id="no" value="No" name="no">
+            <label for="no">No</label>
+          </form>
+          <form>
+            <label id="fullTimeBudtenders">Full-Time Budtenders:</label>
+            <br>
+            <input type="text" id="fullTime">
+            <br>
+            <label id="partTimeBudtenders">Part-Time Budtenders:</label>
+            <input type="text" id="partTime">
+          </form>
+          <form>
+            <label id="hoursWorked">Hours Worked:</label>
+            <select name="hours" id="hours">
+              <option value="8">8:00</option>
+              <option value="750">7:50</option>
+              <option value="745">7:45</option>
+              <option value="740">7:40</option>
+              <option value="735">7:35</option>
+              <option value="730">7:30</option>
+            </select>
+          </form>
+          </div>
+      </div>
+  </div>
+  <div id="tips-container">
+    <ul id="tips-list">
+    </ul>
+  <div id="tips-total"></div>
+  </div>
+  
+</div>
 
-
-
+<script src="./index.js"></script>
 </body>
-
-<script src="./app.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
-
 </html>
